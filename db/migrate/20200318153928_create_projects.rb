@@ -6,8 +6,8 @@ class CreateProjects < ActiveRecord::Migration[5.2]
       t.integer :number_of_participants
       t.integer :amount_needed
 
-      t.belongs_to :city
-      t.belongs_to :a
+      t.belongs_to :city, index: true
+      t.belongs_to :architect, index: true
       t.timestamps
     end
   end
