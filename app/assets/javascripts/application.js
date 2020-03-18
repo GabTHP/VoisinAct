@@ -18,7 +18,7 @@
 //= require bootstrap.min
 //= require jquery.magnific-popup
 //= require swiper.min
-//= require masonry.pkgd
+//= require masonry.pkgd.min
 //= require owl.carousel.min
 //= require jquery.nice-select.min
 //= require slick.min
