@@ -10,6 +10,13 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+ *= require bootstrap.min
+ *= require animate
+ *= require owl.carousel.min
+ *= require all
+ *= require flaticon
+ *= require themify-icons
+ *= require magnific-popup
+ *= require slick
+ *= require style
  */
