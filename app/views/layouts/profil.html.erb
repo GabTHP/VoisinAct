@@ -47,13 +47,13 @@
 
                                 
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle " href="blog.html" id="navbarDropdown_2"
+                                    <a class="nav-link dropdown-toggle "  id="navbarDropdown_2"
                                         role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Se Connecter
+                                        Mon Compte
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
-                                        <a class="dropdown-item" href="blog.html"> Login</a>
-                                        <a class="dropdown-item" href="single-blog.html">Créer un Compte</a>
+                                        <%= link_to "Mon Profil", users_show_path(current_user),  :class => "dropdown-item"%>
+                                        <%= link_to "Se Déconnecter", destroy_user_session_path,  :class => "dropdown-item"%>
                                     </div>
                                 </li>
                                 <li class="hearer_icon d-flex nav-item">
