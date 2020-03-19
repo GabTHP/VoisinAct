@@ -52,8 +52,8 @@
                                         Se Connecter
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
-                                        <a class="dropdown-item" href="blog.html"> Login</a>
-                                        <a class="dropdown-item" href="single-blog.html">Créer un Compte</a>
+                                        <%= link_to "Login", new_user_session_path,  :class => "dropdown-item"%>
+                                        <%= link_to "Sign up", new_user_registration_path,  :class => "dropdown-item"%>
                                     </div>
                                 </li>
                                 <li class="hearer_icon d-flex nav-item">
