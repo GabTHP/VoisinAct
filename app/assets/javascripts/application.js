@@ -13,4 +13,20 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
+//= require jquery-1.12.1.min
+//= require popper.min
+//= require bootstrap.min
+//= require jquery.magnific-popup
+//= require swiper.min
+//= require masonry.pkgd.min
+//= require owl.carousel.min
+//= require jquery.nice-select.min
+//= require slick.min
+//= require jquery.counterup.min
+//= require contact
+//= require jquery.ajaxchimp.min
+//= require jquery.form
+//= require jquery.validate.min
+//= require mail-script
+//= require custom
+
