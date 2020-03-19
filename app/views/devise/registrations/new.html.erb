@@ -44,7 +44,9 @@
                             <p>Renseignes les informations demandées pour créer ton profil sur VoisinAct</p>
 
                         </h3>
-                        <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => 'row contact_form' }) do |f| %>
+
+                        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => 'row contact_form' }) do |f| %>
+
                         <%= render "devise/shared/error_messages", resource: resource %>
 
                             <div class="col-md-12 form-group p_star">
