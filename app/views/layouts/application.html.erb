@@ -34,10 +34,10 @@
                         <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <%= link_to "Accueil", {controller: "projects", action: "index"}, class: "nav-link" %>
+                                    <%= link_to "Accueil", root_path, class: "nav-link" %>
                                 </li>
                                 <li class="nav-item">
-                                    <%= link_to "Projets", {controller: "projects", action: "index"}, class: "nav-link" %>
+                                    <%= link_to "Projets", root_path, class: "nav-link" %>
                                 </li>
 
 
@@ -52,8 +52,8 @@
                                         Se Connecter
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
-                                        <a class="dropdown-item" href="blog.html"> Login</a>
-                                        <a class="dropdown-item" href="single-blog.html">Créer un Compte</a>
+                                        <%= link_to "Sign In", new_user_session_path,  :class => "dropdown-item"%>
+                                        <%= link_to "Sign Up", new_user_registration_path,  :class => "dropdown-item"%>
                                     </div>
                                 </li>
                                 <li class="hearer_icon d-flex nav-item">
