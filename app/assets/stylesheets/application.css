@@ -11,12 +11,13 @@
  * It is generally better to create a new file per style scope.
  *
  *= require bootstrap.min
- *= require animate
- *= require owl.carousel.min
+
+
  *= require all
  *= require flaticon
  *= require themify-icons
  *= require magnific-popup
- *= require slick.min
+ *= require slick
  *= require style
+
  */
