@@ -1,0 +1,8 @@
+ <%=form_tag url_for(action: 'create'), method: 'post' do %> 
+    <%= text_field_tag 'title' ,"", class:"form-control", placeholder: "Titre" %>
+    <br/>
+    <%= text_field_tag 'location' ,"", class:"form-control", placeholder: "Lieu" %><br/>
+    <br/>
+    <%= text_area_tag 'description' ,"", class:"form-control", placeholder: "Description" %><br/>
+    <%= submit_tag "Créer", class: 'btn_2' %>
+  <% end %>
