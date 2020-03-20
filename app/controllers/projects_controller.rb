@@ -15,18 +15,18 @@ class ProjectsController < ApplicationController
 
 	def create
 	  @project = Project.new(project_params)
+	  @project.city = current_user.city
 	  @project.architect = current_user
-	  puts project_params
 	  if @project.save
 	  	redirect_to @project
 	  else
 	  	render :new
 	  end
 	end
-
+	
 	private
 
 	def project_params
-	  params.require(:project).permit(:title, :description, :city, :number_of_participants, :amount_needed)
+	  params.permit(:title, :description, :location, :number_of_participants, :amount_needed)
 	end
 end 
