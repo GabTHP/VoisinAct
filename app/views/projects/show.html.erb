@@ -71,7 +71,7 @@
             <div class="card_area d-flex justify-content-between align-items-center">
               <a href="#" class="btn_3">Rejoindre le projet</a>
               <div class="like_us"> <i class="fas fa-heart"></i> 
-                <%= link_to "Like", like_projects_path(project_id: @project.id), method: post, :class=> 'btn btn-outline-danger' %>
+                <%= link_to "Like", wishlist_path(project_id: @project.id), method: post, :class=> 'btn btn-outline-danger' %>
               </div>
             </div>
           </div>
