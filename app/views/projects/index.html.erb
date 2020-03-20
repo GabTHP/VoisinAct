@@ -44,59 +44,24 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="section_tittle text-center">
-                        <h2>Les Projets En Cours</h2>
+                        <h2><b>Les Projets En Cours</b></h2>
                     </div>
                 </div>
             </div>
             <div class="row align-items-center justify-content-between">
+                <% @projects.each do |project| %>
                 <div class="col-lg-4 col-sm-4">
                     <div class="single_feature_post_text">
-                        <p>Nom du créateur</p>
-                        <h3>Nom du projet</h3>
-                        <a href="#" class="feature_btn">Plus d'informations <i class="fas fa-play"></i></a>
+                        <p><b> <%= project.city.name %></b></p>
+                        <h3><b><strong><%= project.title %></strong></b></h3>
+                        <p><b> <%= project.number_of_participants %> participants</b></p>
+                        <%= link_to "Plus d'informations", project_path(project.id), :class => 'feature_btn'%>
+  
                         <img src="img/feature/feature_1.png" alt="">
+                        <br><h4><b>Objectif à atteindre <strong><%= project.amount_needed %> $</strong></b></h4>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-4">
-                    <div class="single_feature_post_text">
-                        <p>Premium Quality</p>
-                        <h3>Latest foam Sofa</h3>
-                        <a href="#" class="feature_btn">EXPLORE NOW <i class="fas fa-play"></i></a>
-                        <img src="img/feature/feature_2.png" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-4">
-                    <div class="single_feature_post_text">
-                        <p>Premium Quality</p>
-                        <h3>Latest foam Sofa</h3>
-                        <a href="#" class="feature_btn">EXPLORE NOW <i class="fas fa-play"></i></a>
-                        <img src="img/feature/feature_2.png" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-4">
-                    <div class="single_feature_post_text">
-                        <p>Nom du créateur</p>
-                        <h3>Nom du projet</h3>
-                        <a href="#" class="feature_btn">Plus d'informations <i class="fas fa-play"></i></a>
-                        <img src="img/feature/feature_1.png" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-4">
-                    <div class="single_feature_post_text">
-                        <p>Premium Quality</p>
-                        <h3>Latest foam Sofa</h3>
-                        <a href="#" class="feature_btn">EXPLORE NOW <i class="fas fa-play"></i></a>
-                        <img src="img/feature/feature_2.png" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-4">
-                    <div class="single_feature_post_text">
-                        <p>Premium Quality</p>
-                        <h3>Latest foam Sofa</h3>
-                        <a href="#" class="feature_btn">EXPLORE NOW <i class="fas fa-play"></i></a>
-                        <img src="img/feature/feature_2.png" alt="">
-                    </div>
-                </div>
+                <%end%>
             </div>
         </div>
     </section>
