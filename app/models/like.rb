@@ -1,4 +1,4 @@
 class Like < ApplicationRecord
-  belongs_to :user
-  belongs_to :project
+  belongs_to :fan, class_name: 'User', foreign_key: 'fan_id'
+  belongs_to :favorite_project, class_name: 'Project', foreign_key: 'favorite_project_id'
 end
