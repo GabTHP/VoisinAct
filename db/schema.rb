@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_19_175849) do
+
+ActiveRecord::Schema.define(version: 2020_03_20_103916) do
+
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,8 +46,8 @@ ActiveRecord::Schema.define(version: 2020_03_19_175849) do
   create_table "projects", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.integer "number_of_participants"
-    t.integer "amount_needed"
+    t.integer "number_of_participants", default: 0
+    t.integer "amount_needed", default: 0
     t.bigint "city_id"
     t.bigint "architect_id"
     t.datetime "created_at", null: false
