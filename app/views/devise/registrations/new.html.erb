@@ -65,6 +65,11 @@
                               <%= f.text_area :description, autofocus: true, autocomplete: "email", :class => "form-control ", placeholder: 'Parle nous de toi, ce que tu aimes dans la vie et tout ça ;)'  %>
                             </div>
 
+                            <div class="col-md-12 form-group p_star">
+                              <%= f.label :city, 'City', :class => 'sr-only' %>
+                              <%= f.text_field :city, autofocus: true, :class => "form-control ", placeholder: 'Ville' %>
+                            </div>
+
 
                             <div class="col-md-12 form-group p_star">
                               <%= f.label :email, 'Email Address', :class => 'sr-only'  %>

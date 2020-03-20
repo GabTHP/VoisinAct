@@ -1,8 +1,37 @@
- <%=form_tag url_for(action: 'create'), method: 'post' do %> 
+  <head>
+   
+ </head>
+
+
+
+
+ <body>
+
+ <br>
+ <br>
+ <br>
+ <br> 
+ <br>
+ <br> 
+
+<h2>Vous êtes sur le point de proposer un nouvel événement</h2><hr><br/>
+
+
+<h4>Veuillez s'il vous plaît décrire votre projet dans le formulaire ci-dessous</h4><br/>
+
+  <div class="container">
+   <%=form_tag url_for(action: 'create'), method: 'post' do %> 
     <%= text_field_tag 'title' ,"", class:"form-control", placeholder: "Titre" %>
     <br/>
     <%= text_field_tag 'location' ,"", class:"form-control", placeholder: "Lieu" %><br/>
     <br/>
     <%= text_area_tag 'description' ,"", class:"form-control", placeholder: "Description" %><br/>
+    <%= number_field_tag 'number_of_participants' ,"", class:"form-control", placeholder: "Nombre de personnes dont avez besoin (vous non compris) pour mener le projet à bien" %><br/>
+    <%= number_field_tag 'amount_needed' ,"", class:"form-control", placeholder: "Budget souhaité pour votre projet" %><br/>
     <%= submit_tag "Créer", class: 'btn_2' %>
   <% end %>
+  </div>
+   
+ </body>
+
+ </html>
