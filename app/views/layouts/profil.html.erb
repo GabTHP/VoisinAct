@@ -52,6 +52,7 @@
                                         Mon Compte
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
+                                        <%= link_to "Mon Profil", users_show_path(current_user),  :class => "dropdown-item"%>
                                         <%= link_to "Sign out", destroy_user_session_path, :method => :delete,  :class => "dropdown-item"%>
                                     </div>
                                 </li>

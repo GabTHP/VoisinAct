@@ -1,0 +1,56 @@
+<!-- banner part start-->
+<section class="banner_part">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <div class="banner_slider owl-carousel">
+                    <div class="single_banner_slider" style="max-height: 100px">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12">
+                                <div class="banner_text">
+                                    <div class="banner_text_iner">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-counter"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- banner part start-->
+<br>
+<br>
+<section class="feature_product_area latest_product_area">
+        <div class="main_box">
+            <div class="container">
+
+                    <h1>Your Personal Informations</h1>
+                    <hr>
+                    <h4> Adresse mail: <%= @user.email %> <h4>
+                    <h4> Nom : <h4>
+                    <h4> Prénom :<h4>
+                    <br>
+                    <%= link_to "Edit Informations",  edit_user_registration_path(current_user), :class => "btn_3" %>
+                    <br>
+                    <br>
+                    <h1> Vos Likes </h1>
+                    <hr>
+                    <br>
+                    <br>
+                    <h1> Vos Projets </h1>
+                    <hr>
+              
+            </div>
+                            
+           
+        </div>
+    
+</section>
+
+
+
