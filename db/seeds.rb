@@ -12,15 +12,7 @@ Project.destroy_all
 User.destroy_all
 City.destroy_all
 
-
-10.times do
-  User.create(
-    'email' => Faker::Internet.email,
-    'password' => Faker::String.random(length: 6)
-  )
-end
-
-10.times do
+5.times do
   City.create(
     'name' => Faker::Address.city,
     'zip_code' => Faker::Address.zip,
@@ -28,12 +20,25 @@ end
 end
 
 10.times do
+  User.create(
+    'first_name' => Faker::Name.first_name,
+    'last_name' => Faker::Name.last_name,
+    'description' => Faker::GreekPhilosophers.quote,
+    'email' => Faker::Internet.email,
+    'password' => Faker::String.random(length: 6),
+    'city' => City.all.sample
+  )
+end
+
+15.times do
   Project.create(
     'title' => Faker::Lorem.word,
     'description' => Faker::Lorem.paragraph,
+    'location' => Faker::Address.street_address,
     'number_of_participants' => Faker::Number.between(from: 1, to: 20),
     'amount_needed' => Faker::Number.between(from: 1, to: 8000),
-    'city_id' => rand(City.first.id..City.last.id)
+    'city' => City.all.sample,
+    'architect' => User.all.sample
   )
 end
 

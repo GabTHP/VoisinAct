@@ -33,7 +33,7 @@
                     <div class="login_part_text_iner">
                         <h2>Tu as déjà un compte ?!</h2>
                         <p>Connescte toi pour suivre tous les projets de la communauté. Click sur le lien ci-dessous pour te connecter ;)</p>
-                        <%= link_to "Créer Mon Compte", new_user_session_path,  :class => "btn_3"%>
+                        <%= link_to "Je me connecte !", new_user_session_path,  :class => "btn_3"%>
                     </div>
                 </div>
             </div>
@@ -48,6 +48,23 @@
                         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => 'row contact_form' }) do |f| %>
 
                         <%= render "devise/shared/error_messages", resource: resource %>
+
+                            
+                            <div class="col-md-12 form-group p_star">
+                              <%= f.label :first_name, 'First Name', :class => 'sr-only' %>
+                              <%= f.text_field :first_name, autofocus: true, :class => "form-control ", placeholder: 'Prénom' %>
+                            </div>
+
+                            <div class="col-md-12 form-group p_star">
+                              <%= f.label :last_name, 'First Name', :class => 'sr-only' %>
+                              <%= f.text_field :last_name, autofocus: true, :class => "form-control ", placeholder: 'Nom' %>
+                            </div>
+
+                            <div class="col-md-12 form-group p_star">
+                              <%= f.label :description, 'Description', :class => 'sr-only'  %>
+                              <%= f.text_area :description, autofocus: true, autocomplete: "email", :class => "form-control ", placeholder: 'Parle nous de toi, ce que tu aimes dans la vie et tout ça ;)'  %>
+                            </div>
+
 
                             <div class="col-md-12 form-group p_star">
                               <%= f.label :email, 'Email Address', :class => 'sr-only'  %>

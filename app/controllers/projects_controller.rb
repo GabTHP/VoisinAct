@@ -1,11 +1,12 @@
 class ProjectsController < ApplicationController
+	before_action :authenticate_user!, except: [:index]
 
 	def index
 	  @projects = Project.all
 	end
 
 	def show
-	  @projects = Project.find(params[:id])
+	  @project = Project.find(params[:id])
 	end
 
 	def new
@@ -26,6 +27,6 @@ class ProjectsController < ApplicationController
 	private
 
 	def project_params
-	  params.require(:project).permit
+	  params.require(:project).permit(:title, :description, :city, :number_of_participants, :amount_needed)
 	end
 end 
