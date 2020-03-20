@@ -40,6 +40,21 @@
                         <%= render "devise/shared/error_messages", resource: resource %>
 
                             <div class="col-md-12 form-group p_star">
+                               <%= f.label :first_name, 'First Name', :class => 'sr-only' %>
+                                <%= f.text_field :first_name, autofocus: true, autocomplete: "first name", :class => "form-control ", placeholder: 'Prénom' %>
+                            </div>
+
+                            <div class="col-md-12 form-group p_star">
+                               <%= f.label :last_name, 'Last Name', :class => 'sr-only' %>
+                                <%= f.text_field :last_name, autofocus: true, autocomplete: "last name", :class => "form-control ", placeholder: 'Nom' %>
+                            </div>
+
+                            <div class="col-md-12 form-group p_star">
+                               <%= f.label :description, 'Description', :class => 'sr-only' %>
+                                <%= f.text_area :description, autofocus: true, autocomplete: "description", :class => "form-control ", placeholder: 'Ta description à changer si tu le souhaite' %>
+                            </div>
+
+                            <div class="col-md-12 form-group p_star">
                                <%= f.label :email, 'Email', :class => 'sr-only' %>
                                 <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "form-control ", placeholder: 'Email Address' %>
                             </div>

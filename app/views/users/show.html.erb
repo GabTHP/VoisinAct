@@ -32,8 +32,9 @@
                     <h1>Your Personal Informations</h1>
                     <hr>
                     <h4> Adresse mail: <%= @user.email %> <h4>
-                    <h4> Nom : <h4>
-                    <h4> Prénom :<h4>
+                    <h4> Nom : <%=@user.last_name%><h4>
+                    <h4> Prénom : <%=@user.first_name%><h4>
+                    <h4> Description : <%=@user.description%><h4>
                     <br>
                     <%= link_to "Edit Informations",  edit_user_registration_path(current_user), :class => "btn_3" %>
                     <br>
