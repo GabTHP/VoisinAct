@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users
+  resources :cities
+  resources :attendances, only: [:create, :destroy]
+  resources :likes, only: [:create, :destroy]
 
   root 'projects#index'
   resources :projects
