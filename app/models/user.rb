@@ -12,4 +12,10 @@ class User < ApplicationRecord
   has_many :involved_projects, class_name: 'Project', through: :attendances, foreign_key: 'involved_project_id'
   has_many :likes
 
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :description, 
+    presence: true,
+    length: {minimum: 60}
+
 end
