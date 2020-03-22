@@ -3,9 +3,9 @@ class AttendancesController < ApplicationController
   def create
     @attendance = Attendance.new(involved_project_id: params[:project_id], participant: current_user)
     if @attendance.save
-      render project_path(params[:project_id])
+      redirect_to project_path(params[:involved_project_id])
     else
-      render project_path(params[:project_id])
+      redirect_to project_path(params[:involved_project_id])
     end
   end
 
