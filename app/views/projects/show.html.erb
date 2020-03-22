@@ -68,12 +68,18 @@
                 <p> https://www.leetchi.com/fr/c/lW3bmkQl </p>
               </li>
             </ul>
-            <div class="card_area d-flex justify-content-between align-items-center">
-              <a href="#" class="btn_3">Rejoindre le projet</a>
-              <div class="like_us"> <i class="fas fa-heart"></i> 
-                <%= link_to "Like", wishlist_path(project_id: @project.id), method: post, :class=> 'btn btn-outline-danger' %>
+            <% if current_user != @project.architect %>
+              <div class="card_area d-flex justify-content-between align-items-center">
+                <% if @project.number_of_participants <= @project.attendances.length %>
+                  <p>Le nombre de participants maximum a été atteint.</p>
+                <% else %>
+                  <%= button_to "Participer au projet", attendances_path, data: { confirm: "Voulez-vous rejoindre le projet ? Un email avec les coordonnées de l'organisateur vous sera alors envoyé." , disable_with: 'Déjà rejoint' }, params: { project_id: @project.id }, class: "btn_3" %>
+                <% end %>
+                <div class="like_us"> <i class="fas fa-heart"></i> 
+                  <%= link_to "Like", wishlist_path(project_id: @project.id), method: post, :class=> 'btn btn-outline-danger' %>
+                </div>
               </div>
-            </div>
+            <% end %>
           </div>
         </div>
       </div>
