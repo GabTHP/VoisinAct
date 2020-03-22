@@ -67,7 +67,8 @@
 
                             <div class="col-md-12 form-group p_star">
                               <%= f.label :city, 'City', :class => 'sr-only' %>
-                              <%= f.text_field :city, autofocus: true, :class => "form-control ", placeholder: 'Ville' %>
+                              <span>Ville :</span>
+                              <%= f.select(:city_id, City.all.map { |city| [city.name, city.id]  }, :class => "form-control ") %>
                             </div>
 
 

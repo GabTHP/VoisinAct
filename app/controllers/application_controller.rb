@@ -16,8 +16,8 @@ def set_layout
     protected
 
         def configure_permitted_parameters
-            devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:first_name, :last_name, :description, :email, :password) }
-            devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:first_name, :last_name, :description, :email, :password, :current_password) }
+            devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:first_name, :last_name, :description, :email, :password, :city_id) }
+            devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:first_name, :last_name, :description, :email, :password, :current_password, :city_id) }
         end
 
  # Prevent CSRF attacks by raising an exception.
