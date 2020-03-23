@@ -44,8 +44,14 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="section_tittle text-center">
-                        <h2><b>Les Projets En Cours</b></h2>
+                        <h2><b>Les Projets En Cours</b></h2> <br><hr><p> Trier par ville </p>
+                        <% @cities.each do |city| %>
+                        <%= link_to city.name, root_path(by_city: city.name),  :class => "btn_3"%>
+                        <%end%>
+
+                        <hr>
                     </div>
+
                 </div>
             </div>
             <div class="row align-items-center justify-content-between">

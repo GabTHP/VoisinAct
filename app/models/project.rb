@@ -1,4 +1,7 @@
 class Project < ApplicationRecord
+
+
+
   belongs_to :city
   belongs_to :architect, class_name: 'User', foreign_key: 'architect_id'
   has_many :attendances, foreign_key: 'involved_project_id'
@@ -15,5 +18,11 @@ class Project < ApplicationRecord
   validates :amount_needed,
     presence: true,
     numericality: { greater_than_or_equal_to: 0 }
+
+
+scope :by_city, lambda {|city| joins(:city).where('cities.name = ?',city)}
+
+
+
 
 end
