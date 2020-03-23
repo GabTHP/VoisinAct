@@ -26,7 +26,7 @@ end
     'description' => Faker::GreekPhilosophers.quote,
     'email' => Faker::Internet.email,
     'password' => Faker::String.random(length: 6),
-    'city' => City.all.sample
+    'city_id' => City.all.sample.id
   )
 end
 
