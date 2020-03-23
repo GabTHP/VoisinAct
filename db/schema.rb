@@ -32,12 +32,12 @@ ActiveRecord::Schema.define(version: 2020_03_20_103916) do
   end
 
   create_table "likes", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "project_id"
+    t.bigint "fan_id"
+    t.bigint "favorite_project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["project_id"], name: "index_likes_on_project_id"
-    t.index ["user_id"], name: "index_likes_on_user_id"
+    t.index ["fan_id"], name: "index_likes_on_fan_id"
+    t.index ["favorite_project_id"], name: "index_likes_on_favorite_project_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -60,11 +60,13 @@ ActiveRecord::Schema.define(version: 2020_03_20_103916) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.bigint "city_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
     t.text "description"
+    t.index ["city_id"], name: "index_users_on_city_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
