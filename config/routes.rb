@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'like/show'
   get 'users/show'
   devise_for :users
 
