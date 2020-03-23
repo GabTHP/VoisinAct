@@ -67,9 +67,9 @@
 
                             <div class="col-md-12 form-group p_star">
                               <%= f.label :city, 'City', :class => 'sr-only' %>
-                              <div class = "form-control"
+                              <div class = "form-control">
                               <span>Ville :</span>
-                              <%= f.select(:city_id, City.all.map { |city| [city.name, city.id]  }, :class => "dropdown-item ") %>
+                              <%= f.select(:city_id, City.all.map { |city| [city.name, city.id]  }, :class => "form-control ") %>
                             </div>
                             </div>
 
