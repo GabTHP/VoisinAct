@@ -1,8 +1,12 @@
 class ProjectsController < ApplicationController
 	before_action :authenticate_user!, except: [:index]
 
+	has_scope :by_city
+
 	def index
-	  @projects = Project.all
+		
+	  @projects = apply_scopes(Project).all
+	  @cities = City.all
 	end
 
 	def show
