@@ -49,6 +49,14 @@
                                 <%= f.text_field :last_name, autofocus: true, autocomplete: "last name", :class => "form-control ", placeholder: 'Nom' %>
                             </div>
 
+
+                            <div class="col-md-12 form-group p_star">
+                              <%= f.label :city, 'City', :class => 'sr-only' %>
+
+                              <%= f.select(:city_id, City.all.map { |city| [city.name, city.id]  }, autofocus: true, autocomplete: "city") %>
+
+                            </div>
+
                             <div class="col-md-12 form-group p_star">
                                <%= f.label :description, 'Description', :class => 'sr-only' %>
                                 <%= f.text_area :description, autofocus: true, autocomplete: "description", :class => "form-control ", placeholder: 'Ta description à changer si tu le souhaite' %>
