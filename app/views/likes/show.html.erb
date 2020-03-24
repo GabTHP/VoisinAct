@@ -30,8 +30,8 @@
       <div class="cart_inner">
         <div class="table-responsive">
           <table class="table">
-            <tbody>
-              <% @like.in_like.each do |like| %>
+            <body>
+              <% @like_projects.each do |like_project| %>
               <tr>
                 <td>
                   <div class="media">
@@ -47,7 +47,7 @@
                 </td>
                 <td>
                   <div class="cupon_text float-right">
-                    <%= button_to "Participer au projet", attendances_path, data: { confirm: "Voulez-vous rejoindre le projet ? Un email avec les coordonnées de l'organisateur vous sera alors envoyé." , disable_with: 'Déjà rejoint' }, params: { project_id: @project.id }, class: "btn_1" %>
+                    <%= button_to "Participer au projet", attendances_path, data: { confirm: "Voulez-vous rejoindre le projet ? Un email avec les coordonnées de l'organisateur vous sera alors envoyé." , disable_with: 'Déjà rejoint' }, params: { project_id: @project }, class: "btn_1" %>
                   </div>
                 </td>
               <% end %>
