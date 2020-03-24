@@ -47,7 +47,9 @@
               <%= text_area_tag 'description' ,"", class:"form-control", placeholder: "Description" %><br/>
               <%= number_field_tag 'number_of_participants' ,"", class:"form-control", placeholder: "Nombre de personnes supplémentaires requise pour la bonne conduite du projet" %><br/>
               <%= number_field_tag 'amount_needed' ,"", class:"form-control", placeholder: "Budget souhaité pour votre projet" %><br/>
-              <%= submit_tag "Créer", class: 'btn_2' %>
+              <%= date_field_tag 'deadline' ,"", class:"form-control", placeholder: "Deadline" %>
+              <i>Indiquer la deadline de participation à votre projet</i>
+              <br><br><%= submit_tag "Créer", class: 'btn_2' %>
             <% end %>
 
           </div>

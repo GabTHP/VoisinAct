@@ -6,9 +6,8 @@ Rails.application.routes.draw do
   resources :users
   resources :cities
   resources :attendances, only: [:create, :destroy]
-  resources :likes
+  resources :likes, only:[:show]
   resources :like_projects
-
 
   root 'projects#index'
   resources :projects
