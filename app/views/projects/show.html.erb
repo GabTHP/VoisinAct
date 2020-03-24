@@ -78,7 +78,8 @@
                   <%= button_to "Participer au projet", attendances_path, data: { confirm: "Voulez-vous rejoindre le projet ? Un email avec les coordonnées de l'organisateur vous sera alors envoyé." , disable_with: 'Déjà rejoint' }, params: { project_id: @project.id }, class: "btn_3" %>
                 <% end %>
                 <div class="like_us"> <i class="fas fa-heart"></i> 
-                  <%= link_to "Like", like_path,:class=> 'btn btn-outline-danger' %>
+                  <%= link_to "Like", like_projects_path(project_id:@project.id), method: :post, :class=> 'btn btn-outline-danger' %>
+
                 </div>
               </div>
             <% end %>

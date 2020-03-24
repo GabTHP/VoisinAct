@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
   get 'users/show'
   devise_for :users
+  get '/like', to: 'like#show'
 
   resources :users
   resources :cities
   resources :attendances, only: [:create, :destroy]
   resources :likes, only:[:show]
+  resources :like_projects
 
   root 'projects#index'
   resources :projects
