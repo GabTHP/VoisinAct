@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   root 'projects#index'
   resources :projects
+  get '/contact/', to: 'pages#contact'
 
   scope ':by_city' do
     resources :city, only: [:index]
