@@ -13,6 +13,10 @@ class LikesController < ApplicationController
     end
   end
 
+  def in_like
+    self.projects
+  end
+
   def destroy
     project = Project.find(params[:id])
     JoinLikeProject.find_by(like_id: @like.id, project_id: project.id).destroy

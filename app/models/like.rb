@@ -5,6 +5,5 @@ class Like < ApplicationRecord
   def in_like
     self.projects
   end
-
   
 end
