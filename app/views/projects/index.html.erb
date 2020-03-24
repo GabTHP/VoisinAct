@@ -54,21 +54,35 @@
                     </div>
 
                 </div>
-            </div>
-            <div class="row align-items-center justify-content-between">
-                <% @projects.each do |project| %>
-                <div class="col-lg-4 col-sm-4">
-                    <div class="single_feature_post_text">
-                        <p><b> <%= project.city.name %></b></p>
-                        <h3><b><strong><%= project.title %></strong></b></h3>
-                        <p><b> <%= project.number_of_participants %> participants</b></p>
-                        <%= link_to "Plus d'informations", project_path(project.id), :class => 'feature_btn'%>
-  
-                        <img src="img/feature/feature_1.png" alt="">
-                        <br><h4><b>Objectif à atteindre <strong><%= project.amount_needed %> $</strong></b></h4>
-                    </div>
-                </div>
-                <%end%>
+              </div>
+            <div class="row align-items-center justify-content-between"> 
+                    <% @projects.each do |project| %>
+
+                    <% if project.deadline > Date.today %>
+                            <div class="col-lg-4 col-sm-4">
+                                <div class="single_feature_post_text">
+                                    <p><b> <%= project.city.name %></b></p>
+                                    <h3><b><strong><%= project.title %></strong></b></h3>
+                                    
+                                    <%= link_to "Plus d'informations", project_path(project.id), :class => 'feature_btn'%>
+              
+
+                                    <br><h4><b>Objectif à atteindre <strong><%= project.amount_needed %> $</strong></b></h4>
+                                    <p> <b> Participation des Voisins <strong> <%=project.amount_state  %> $ </strong></b></p>
+                                    <br>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow=<%="#{project.amount_state}"%> aria-valuemin=0 aria-valuemax=<%="#{project.amount_needed}"%>   style= <%= "width:#{project.amount_state/project.amount_needed*100}%" %>></div>
+                                    </div>                                    
+                                    <br><p><b> <%= project.number_of_participants %> participants</b></p>
+                                    <br><p> <b> Deadline le <%=project.deadline %> </b></p>     
+                                </div>
+                            </div>
+
+                    <%else%>
+
+
+                    <%end%>
+                    <%end%>
             </div>
         </div>
     </section>
@@ -98,9 +112,53 @@
             </div>
         </div>
     </section>
-    <!-- awesome_shop part start-->
+    <!-- Fin du Projet du Mois-->
 
-    
+    <!-- Les projets en cours-->
+    <section class="feature_part padding_top">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="section_tittle text-center">
+                        <h2><b>Les Projets Terminés</b></h2> <br><hr><p> Trier par ville </p>
+                        <%= link_to "Toutes", root_path,  :class => "btn_3"%>
+                        <% @cities.each do |city| %>
+                        <%= link_to city.name, root_path(by_city: city.name),  :class => "btn_3"%>
+                        <%end%>
+
+                        <hr>
+                    </div>
+
+                </div>
+              </div>
+            <div class="row align-items-center justify-content-between"> 
+                    <% @projects.each do |project| %>
+
+                    <% if project.deadline < Date.today %>
+                            <div class="col-lg-4 col-sm-4">
+                                <div class="single_feature_post_text">
+                                    <p><b> <%= project.city.name %></b></p>
+                                    <h3><b><strong><%= project.title %></strong></b></h3>
+                                    
+                                    <%= link_to "Plus d'informations", project_path(project.id), :class => 'feature_btn'%>
+              
+                                    <h3> <b> Participation des Voisins <strong> <%=project.amount_state  %> $ </strong></b></h3>
+
+                                    <br><p><b> <%= project.number_of_participants %> participants</b></p>
+                                    <br><p> <b> Deadline le <%=project.deadline %> </b></p>     
+                                </div>
+                            </div>
+
+                    <%else%>
+
+
+                    <%end%>
+                    <%end%>
+            </div>
+        </div>
+    </section>
+    <!-- Les projets en cours-->
+
 </body>
 
 </html>
