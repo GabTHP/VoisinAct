@@ -3,11 +3,17 @@ class ApplicationController < ActionController::Base
 layout :set_layout
 
 def set_layout
-    if current_user
+    if current_user.try(:admin?)
+      'admin'
+
+    elsif 
+      current_user
       'profil'
+
     else
       'application'
     end
+
  end
     protect_from_forgery with: :exception
 

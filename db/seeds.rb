@@ -19,6 +19,18 @@ City.destroy_all
   )
 end
 
+1.times do
+  User.create(
+    'first_name' => "Admin",
+    'last_name' => "Admin",
+    'description' => "You are running admin profile",
+    'email' => "admin@voisinact.fr",
+    'password' => "adminpass",
+    'city_id' => City.all.sample.id,
+    'admin' => true 
+  )
+end
+
 10.times do
   User.create(
     'first_name' => Faker::Name.first_name,

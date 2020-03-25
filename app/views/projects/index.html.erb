@@ -47,7 +47,7 @@
                         <h2><b>Les Projets En Cours</b></h2> <br><hr><p> Trier par ville </p>
                         <%= link_to "Toutes", root_path,  :class => "btn_3"%>
                         <% @cities.each do |city| %>
-                        <%= link_to city.name, root_path(by_city: city.name),  :class => "btn_3"%>
+                        <%= link_to city.name, root_path(by_city: city.name),  :class => "btn_3", :style => "margin-bottom: 10px"%>
                         <%end%>
 
                         <hr>
@@ -123,7 +123,7 @@
                         <h2><b>Les Projets Terminés</b></h2> <br><hr><p> Trier par ville </p>
                         <%= link_to "Toutes", root_path,  :class => "btn_3"%>
                         <% @cities.each do |city| %>
-                        <%= link_to city.name, root_path(by_city: city.name),  :class => "btn_3"%>
+                        <%= link_to city.name, root_path(by_city: city.name),  :class => "btn_3", :style => "margin-bottom: 10px"%>
                         <%end%>
 
                         <hr>

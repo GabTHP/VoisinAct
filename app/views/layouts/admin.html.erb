@@ -38,27 +38,24 @@
                                 </li>
 
 
+
                                 <li class="nav-item">
-                                    <%= link_to "Contact", contact_path, class: "nav-link" %>
+                                    <a class="nav-link" href="contact.html">Contact</a>
                                 </li>
 
                                 
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle " href="blog.html" id="navbarDropdown_2"
+                                    <a class="nav-link dropdown-toggle "  id="navbarDropdown_2"
                                         role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Se Connecter
+                                        Mon Compte
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
-
-                                        <%= link_to "Sign In", new_user_session_path,  :class => "dropdown-item"%>
-                                        <%= link_to "Sign Up", new_user_registration_path,  :class => "dropdown-item"%>
-
+                                        <%= link_to "Admin Dashboard", users_show_path(current_user),  :class => "dropdown-item"%>
+                                        <%= link_to "Sign out", destroy_user_session_path, :method => :delete,  :class => "dropdown-item"%>
                                     </div>
                                 </li>
                                 <li class="hearer_icon d-flex nav-item">
-                                  <div class = "nav-link"><i class="fa fa-heart"></i>
-                                  </div>  
-                                  
+                                  <div class = "nav-link"><i class="fa fa-heart"></i></div>                           
                                 </li>
 
                             </ul>
