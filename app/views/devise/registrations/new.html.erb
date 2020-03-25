@@ -65,6 +65,16 @@
                               <%= f.text_area :description, autofocus: true, autocomplete: "email", :class => "form-control ", placeholder: 'Parle nous de toi, ce que tu aimes dans la vie et tout ça ;)'  %>
                             </div>
 
+
+
+                            <div class="col-md-12 form-group p_star">
+                              
+                              <%= f.label :avatar, 'Description', :class => 'sr-only'  %>
+                              <%= f.file_field :avatar, :class => "form-control "%>
+                            </div>
+
+
+
                             <div class="col-md-12 form-group p_star">
                               <%= f.label :city, 'City', :class => 'sr-only' %>
                               <div class = "form-control">

@@ -7,6 +7,7 @@ gem 'devise'
 gem 'faker'
 gem 'has_scope'
 gem 'dotenv-rails'
+gem 'gravatar_image_tag', github: 'mdeering/gravatar_image_tag'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
