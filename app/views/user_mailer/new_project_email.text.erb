@@ -1,0 +1,13 @@
+Bravo <%= @architect.first_name %>, vous venez de proposer un nouveau projet !
+==========================================================
+
+Rapide récap' de votre projet <%= @project.title %> :
+
+Ville : <%= @project.city.name %>.
+Lieu : <%= @project.location %>.
+Nombre de participants désiré : <%= @project.number_of_participants %>.
+Montant à rassembler pour réaliser le projet : <%= @project.amount_needed %>.
+
+Pour consulter la page de ton projet : <%= @url %>.
+ 
+À très vite sur Voisinact !

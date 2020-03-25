@@ -1,7 +1,5 @@
 class Project < ApplicationRecord
 
-
-
   belongs_to :city
   belongs_to :architect, class_name: 'User', foreign_key: 'architect_id'
   has_many :attendances, foreign_key: 'involved_project_id'
@@ -19,10 +17,12 @@ class Project < ApplicationRecord
     presence: true,
     numericality: { greater_than_or_equal_to: 0 }
 
+  scope :by_city, lambda {|city| joins(:city).where('cities.name = ?',city)}
 
-scope :by_city, lambda {|city| joins(:city).where('cities.name = ?',city)}
+  after_create :new_project_send
 
-
-
+  def new_project_send
+    UserMailer.new_project_email(self).deliver_now
+  end
 
 end

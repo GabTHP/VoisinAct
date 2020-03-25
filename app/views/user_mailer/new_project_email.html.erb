@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1> Bravo <%= @architect.first_name %>, vous venez de proposer un nouveau projet !</h1>
+    <p>
+      Rapide récap' de votre projet <%= @project.title %> :
+    </p>
+    <p>Ville : <%= @project.city.name %></p>
+    <p>Lieu : <%= @project.location %></p>
+    <p>Nombre de participants désiré : <%= @project.number_of_participants %></p>
+    <p>Montant à rassembler pour réaliser le projet : <%= @project.amount_needed %></p>
+    <p>
+      Pour consulter la page de ton projet : <%= @url %>.
+    </p>
+    <p>À très vite sur Voisinact !</p>
+  </body>
+</html>

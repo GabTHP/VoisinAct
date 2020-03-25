@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1><%= @architect.first_name %>, un nouveau participant vient de rejoindre votre projet !</h1>
+    <p>
+      <%= @participant.first_name %> <%= @participant.last_name %> a rejoint votre projet <%= @project.title %>.
+    </p>
+    <p>
+      Vous pouvez le contacter à cette adresse mail pour vous organiser :
+    </p>
+    <p><%= @participant.email %></p>
+    <p>À très vite sur Voisinact !</p>
+  </body>
+</html>
