@@ -35,15 +35,15 @@
               <tr>
                 <td>
                   <div class="media">
-                    <div class="d-flex">
-                      <img src="img/product/single-product/cart-1.jpg" alt="" />
-                    </div>
-                    <div class="media-body">
-                      <p><%= @project %></p>
+                    <div class="d-flex.text-dark">
+                      <h2><%= link_to like_project.project.title , project_path(like_project.project.id) , class: "text-dark" %></h2>
                     </div>
                   </div>
                 </td>
                 <td>
+                    <div class="media-body.text-dark">
+                      <p><%= link_to like_project.project.description , project_path(like_project.project.id) , class: "text-dark" %></p>
+                    </div>
                 </td>
                 <td>
                   <div class="cupon_text float-right">

@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
   get 'users/show'
   devise_for :users
-  get '/likes', to: 'likes#show'
 
   resources :users
   resources :cities
   resources :attendances, only: [:create, :destroy]
-  resources :likes, only:[:show]
+  resources :likes
   resources :like_projects
 
   root 'projects#index'
@@ -15,6 +14,7 @@ Rails.application.routes.draw do
 
   scope ':by_city' do
     resources :city, only: [:index]
+
 
   end
 
