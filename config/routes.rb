@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'users/show'
   devise_for :users
-  get '/like', to: 'like#show'
+  get '/likes', to: 'likes#show'
 
   resources :users
   resources :cities

@@ -1,8 +1,10 @@
 class LikesController < ApplicationController
+     before_action :authenticate_user!
 
   def show
-    @like = Like.find_by(id: current_user)
-    @like_projects = [LikeProject.find_by(like_id: @like)]
+    @like = Like.find_by(user: current_user)
+    @like_projects = LikeProject.all.select {|like_project| like_project.like == @like}
+
   end
 
 
