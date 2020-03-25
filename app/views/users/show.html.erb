@@ -29,7 +29,7 @@
         <div class="main_box">
             <div class="container">
 
-                    <h1>Your Personal Informations</h1>
+                    <h1>Informations Personnelles</h1>
                     <hr>
                     <h4> Adresse mail: <%= @user.email %> <h4>
                     <h4> Nom : <%=@user.last_name%><h4>
@@ -39,24 +39,48 @@
                     <%= link_to "Edit Informations",  edit_user_registration_path(current_user), :class => "btn_3" %>
                     <br>
                     <br>
-                    <h1> Vos Likes </h1>
-                    <hr>
-                    <br>
-                    <br>
-                    <h1> Vos Implications </h1>
-                    <hr>
-                    <% current_user.involved_projects.each do |project| %>
-                        <div class="col-lg-4 col-sm-4">
-                            <div class="single_feature_post_text">
-                                <h3><b><strong><%= project.title %></strong></b></h3>
-                                <p><b> <%= project.number_of_participants %> participants</b></p>
-                                <p><b> <%= project.location %></b></p>
-                                <%= link_to "Plus d'informations", project_path(project.id), :class => 'feature_btn'%>
-          
-                                <img src="img/feature/feature_1.png" alt="">
-                                <br><h4><b>Objectif à atteindre <strong><%= project.amount_needed %> $</strong></b></h4>
+
+                    <% if current_user.admin?  %>
+
+                        <h1> Informations générales </h1>
+                        <hr>
+
+                        <p><b> Nombre d'utilisateurs : <%= User.count - 1 %> </b></p>
+                        <p><b> Nombre de Projet Total <%= Project.count %> </b></p>
+
+                        <% @projects.each do |project|%>
+                            <% if project.deadline > Date.today %>
+                                <% @project_pending << project %>
+                            <% else  project.deadline < Date.today %>
+                                <% @project_over << project %>    
+                            <%end%>
+                        <%end%>
+                        <p><b> Nombre de Projet en cours : <%= @project_pending.count %> </b></p>
+                        <p><b> Nombre de Projet Terminé <%= @project_over.count %> </b></p>
+
+
+                    <% else %>
+
+                        <h1> Vos Likes </h1>
+                        <hr>
+                        <br>
+                        <br>
+                        <h1> Vos Implications </h1>
+                        <hr>
+                        <% current_user.involved_projects.each do |project| %>
+                            <div class="col-lg-4 col-sm-4">
+                                <div class="single_feature_post_text">
+                                    <h3><b><strong><%= project.title %></strong></b></h3>
+                                    <p><b> <%= project.number_of_participants %> participants</b></p>
+                                    <p><b> <%= project.location %></b></p>
+                                    <%= link_to "Plus d'informations", project_path(project.id), :class => 'feature_btn'%>
+              
+                                    <img src="img/feature/feature_1.png" alt="">
+                                    <br><h4><b>Objectif à atteindre <strong><%= project.amount_needed %> $</strong></b></h4>
+                                </div>
                             </div>
-                        </div>
+                        <% end %>
+
                     <% end %>
               
             </div>

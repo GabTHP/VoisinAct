@@ -6,6 +6,9 @@ before_action :authenticate_user!, only: [:show]
 
 
   	@user = User.find(current_user.id)
+  	@projects = Project.all
+	@project_pending = [] 
+	@project_over = []
 
 	if current_user.id != @user.id
 	  flash[:alert] = "Vous ne pouvez pas accéder à la page de profil d'un autre utilisateur."

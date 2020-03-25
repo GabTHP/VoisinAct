@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_24_112151) do
+ActiveRecord::Schema.define(version: 2020_03_25_100039) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,13 +31,23 @@ ActiveRecord::Schema.define(version: 2020_03_24_112151) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "likes", force: :cascade do |t|
-    t.bigint "fan_id"
-    t.bigint "favorite_project_id"
+  create_table "like_projects", force: :cascade do |t|
+    t.bigint "like_id"
+    t.bigint "project_id"
+    t.integer "quantity", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["fan_id"], name: "index_likes_on_fan_id"
-    t.index ["favorite_project_id"], name: "index_likes_on_favorite_project_id"
+    t.index ["like_id"], name: "index_like_projects_on_like_id"
+    t.index ["project_id"], name: "index_like_projects_on_project_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_likes_on_project_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -69,6 +79,7 @@ ActiveRecord::Schema.define(version: 2020_03_24_112151) do
     t.string "first_name"
     t.string "last_name"
     t.text "description"
+    t.boolean "admin", default: false
     t.index ["city_id"], name: "index_users_on_city_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
