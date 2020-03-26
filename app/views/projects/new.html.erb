@@ -39,7 +39,7 @@
                 <p>Veuillez s'il vous plaît décrire votre projet dans le formulaire ci-dessous</p>
             </h3>
 
-              <%=form_tag url_for(action: 'create'), method: 'post' do %> 
+              <%=form_tag url_for(action: 'create'), method: 'post', multipart: true do %> 
               <%= text_field_tag 'title' ,"", class:"form-control", placeholder: "Titre" %>
               <br/>
               <%= text_field_tag 'location' ,"", class:"form-control", placeholder: "Lieu" %><br/>
@@ -48,7 +48,10 @@
               <%= number_field_tag 'number_of_participants' ,"", class:"form-control", placeholder: "Nombre de personnes supplémentaires requise pour la bonne conduite du projet" %><br/>
               <%= number_field_tag 'amount_needed' ,"", class:"form-control", placeholder: "Budget souhaité pour votre projet" %><br/>
               <%= date_field_tag 'deadline' ,"", class:"form-control", placeholder: "Deadline" %>
-              <i>Indiquer la deadline de participation à votre projet</i>
+              <i>Indiquer la deadline de participation à votre projet</i>                
+              <br><br><%= file_field_tag 'picture' %>
+              <br><i>Choisis une illustration pour ton projet et faire plaisir aux yeux des voisins  ! </i>
+
               <br><br><%= submit_tag "Créer", class: 'btn_2' %>
             <% end %>
 

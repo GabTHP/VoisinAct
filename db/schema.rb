@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(version: 2020_03_25_150824) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "location"
-    t.decimal "amount_state"
+    t.decimal "amount_state", default: "0.0"
     t.date "deadline"
     t.boolean "is_over"
     t.index ["architect_id"], name: "index_projects_on_architect_id"
