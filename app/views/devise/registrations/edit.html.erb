@@ -1,3 +1,11 @@
+<head>
+
+<link rel="stylesheet" href="path/to/nice-select.css">
+
+</head>
+
+
+
 <!-- banner part start-->
 <section class="banner_part">
     <div class="container">
@@ -57,6 +65,12 @@
                                 <%= f.text_field :last_name, autofocus: true, autocomplete: "last name", :class => "form-control ", placeholder: 'Nom' %>
                             </div>
 
+                            <div class="col-md-12 form-group p_star">
+                              <%= f.label :city, 'City', :class => 'sr-only' %>
+                              <div class = "form-control">
+                              <%= f.select(:city_id, City.all.map { |city| [city.name, city.id]  }, :class => "form-control ") %>
+                            </div>
+                            </div>
 
 
                             <div class="col-md-12 form-group p_star">
@@ -64,12 +78,6 @@
                                 <%= f.text_area :description, autofocus: true, autocomplete: "description", :class => "form-control ", placeholder: 'Ta description à changer si tu le souhaite' %>
                             </div>
 
-                            <div class="col-md-12 form-group p_star">
-                              <%= f.label :city, 'City', :class => 'sr-only' %>
-                              
-                              <span>Ville :</span>
-                              <%= f.select(:city_id, City.all.collect { |city| [city.name, city.id]  }, include_blank: true) %>
-                            </div>
 
 
                             <div class="col-md-12 form-group p_star">
@@ -121,7 +129,21 @@
             </div>
         </div>
     </div>
+
+    <p>Select<br>
+<span class="wpcf7-form-control-wrap Selectbox"><select class="Wide" name="Selectbox" class="wpcf7-form-control wpcf7-select" aria-invalid="false"><option value="First one">First one</option><option value="Second One">Second One</option><option value="Third one">Third one</option></select></span></p>
+<p>Hello</p>
 </section>
+
+
+
+<script src="path/to/jquery.js"></script> 
+<script src="path/to/jquery.nice-select.js"></script>
+<!-- Script -->
+<script type='text/javascript'>
+ 
+
+</script>
 <!--================login_part end =================-->
 
 
