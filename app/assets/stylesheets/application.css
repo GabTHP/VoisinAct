@@ -11,7 +11,8 @@
  * It is generally better to create a new file per style scope.
  *
  *= require bootstrap.min
-
+ *= animate
+ 
 
  *= require all
  *= require flaticon
@@ -19,5 +20,6 @@
  *= require magnific-popup
  *= require slick
  *= require style
+ 
 
  */
