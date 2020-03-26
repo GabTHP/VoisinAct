@@ -59,15 +59,15 @@
                     <% @projects.each do |project| %>
 
                     <% if project.deadline > Date.today %>
-                            <div class="col-lg-4 col-sm-4">
+                            <div class="col-lg-4 col-sm-10">
                                 <div class="single_feature_post_text single_product_item">
                                     <p><b> <%= project.city.name %></b></p>
-                                    <h3><b><strong><%= project.title %></strong></b></h3>
+                                    <h4><b><strong><%= project.title %></strong></b></h4>
                                     
                                     <%= link_to "Plus d'informations", project_path(project.id), :class => 'feature_btn'%>
               
 
-                                    <br><h4><b>Objectif à atteindre <strong><%= project.amount_needed %> $</strong></b></h4>
+                                    <h4><b>Objectif à atteindre <strong><%= project.amount_needed %> $</strong></b></h4>
                                     <p> <b> Participation des Voisins <strong> <%=project.amount_state  %> $ </strong></b></p>
                                     <br>
                                     <div class="progress">
@@ -75,12 +75,18 @@
                                     </div>                                    
                                     <br><p><b> <%= project.number_of_participants %> participants</b></p>
                                     <br><p> <b> Deadline le <%=project.deadline %> </b></p> 
-                                    <% if project.architect.avatar.attached? %>
-                                    <%= image_tag project.architect.avatar, alt: 'avatar', height: 80, width: 80, :class => "rounded-circle" %> 
-                                  <%else%>
-                                    <%= image_tag gravatar_image_url('junk', :alt => 'Github Default Gravatar', :gravatar => { :default => 'https://assets.github.com/images/gravatars/gravatar-140.png' }), :class => "rounded-circle" %>
-                                  <%end%>
+
+                                    
+                                        <% if project.architect.avatar.attached? %>
+                                       <p> <%= image_tag project.architect.avatar, alt: 'avatar', height:80, width:80, :class => "rounded-circle " %>  <p>
+                                      <%else%>
+                                        <%= image_tag gravatar_image_url('junk', :alt => 'Github Default Gravatar', :gravatar => { :default => 'https://assets.github.com/images/gravatars/gravatar-140.png' }), :class => "rounded-circle " %>
+                                      <%end%>
+                                  
+                                    
                                   <p style="position:absolute; bottom:20px;"><b> Projet créé par <strong><%=project.architect.first_name %>.<%=project.architect.last_name.first%> </strong></b></p>
+
+                                
 
                                   <br>
                                 </div>
