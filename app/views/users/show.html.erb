@@ -35,7 +35,7 @@
                       <% if current_user.avatar.attached? %>
                         <%= image_tag current_user.avatar, alt: 'avatar', height: 80, width: 80, :class => "rounded-circle" %> 
                       <%else%>
-                        <%= image_tag gravatar_image_url('junk', :alt => 'Github Default Gravatar', :gravatar => { :default => 'https://assets.github.com/images/gravatars/gravatar-140.png' }) %>
+                        <%= image_tag gravatar_image_url('junk', :alt => 'Github Default Gravatar', :gravatar => { :default => 'https://assets.github.com/images/gravatars/gravatar-140.png' }), :class => "rounded-circle" %>
                       <%end%>
 
                     </div>
@@ -43,6 +43,7 @@
                     <h4> Nom : <%=@user.last_name%><h4>
                     <h4> Prénom : <%=@user.first_name%><h4>
                     <h4> Description : <%=@user.description%><h4>
+                    <h4> Ma Ville : <%=@user.city.name%><h4>
                     <br>
                    
                     <%= link_to "Edit Informations",  edit_user_registration_path(current_user), :class => "btn_3" %>

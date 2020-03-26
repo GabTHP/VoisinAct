@@ -40,6 +40,14 @@
                         <%= render "devise/shared/error_messages", resource: resource %>
 
                             <div class="col-md-12 form-group p_star">
+                              
+                              <%= f.label :avatar, 'Description', :class => 'sr-only'  %>
+                              <%= f.file_field :avatar, :class => "form-control "%>
+                              <i>(Mettre à jour son Avatar)</i>
+                            </div>
+
+
+                            <div class="col-md-12 form-group p_star">
                                <%= f.label :first_name, 'First Name', :class => 'sr-only' %>
                                 <%= f.text_field :first_name, autofocus: true, autocomplete: "first name", :class => "form-control ", placeholder: 'Prénom' %>
                             </div>
@@ -50,17 +58,19 @@
                             </div>
 
 
-                            <div class="col-md-12 form-group p_star">
-                              <%= f.label :city, 'City', :class => 'sr-only' %>
-
-                              <%= f.select(:city_id, City.all.map { |city| [city.name, city.id]  }, autofocus: true, autocomplete: "city") %>
-
-                            </div>
 
                             <div class="col-md-12 form-group p_star">
                                <%= f.label :description, 'Description', :class => 'sr-only' %>
                                 <%= f.text_area :description, autofocus: true, autocomplete: "description", :class => "form-control ", placeholder: 'Ta description à changer si tu le souhaite' %>
                             </div>
+
+                            <div class="col-md-12 form-group p_star">
+                              <%= f.label :city, 'City', :class => 'sr-only' %>
+                              
+                              <span>Ville :</span>
+                              <%= f.select(:city_id, City.all.collect { |city| [city.name, city.id]  }, include_blank: true) %>
+                            </div>
+
 
                             <div class="col-md-12 form-group p_star">
                                <%= f.label :email, 'Email', :class => 'sr-only' %>
@@ -82,11 +92,18 @@
                               <%= f.password_field :password_confirmation, autocomplete: "new-password", :class => "form-control ", placeholder: 'Confirm New Password' %>
                             </div>
 
+
+
+                         
+
                             <div class =" col-md-12 form-group ">
+
                               <%= f.label :current_password, :class => 'sr-only' %> <br />
                               <%= f.password_field :current_password, autocomplete: "current-password", :class => "form-control ", placeholder: 'Current Password' %>
                               <i>(we need your current password to confirm your changes)</i>
                             </div>
+
+
 
 
                             <div class =" col-md-12 form-group ">
@@ -94,9 +111,9 @@
                             </div>
                           <% end %>
 
-                          <h4>Cancel my account</h4>
+                          <h4>Supprimer mon compte</h4>
 
-                          <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+                          <p><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
                           <%= link_to "Back", :back %>
                     </div>
