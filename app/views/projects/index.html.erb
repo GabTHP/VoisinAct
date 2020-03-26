@@ -74,7 +74,15 @@
                                         <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow=<%="#{project.amount_state}"%> aria-valuemin=0 aria-valuemax=<%="#{project.amount_needed}"%>   style= <%= "width:#{project.amount_state/project.amount_needed*100}%" %>></div>
                                     </div>                                    
                                     <br><p><b> <%= project.number_of_participants %> participants</b></p>
-                                    <br><p> <b> Deadline le <%=project.deadline %> </b></p>     
+                                    <br><p> <b> Deadline le <%=project.deadline %> </b></p> 
+                                    <% if project.architect.avatar.attached? %>
+                                    <%= image_tag project.architect.avatar, alt: 'avatar', height: 80, width: 80, :class => "rounded-circle" %> 
+                                  <%else%>
+                                    <%= image_tag gravatar_image_url('junk', :alt => 'Github Default Gravatar', :gravatar => { :default => 'https://assets.github.com/images/gravatars/gravatar-140.png' }), :class => "rounded-circle" %>
+                                  <%end%>
+                                  <p style="position:absolute; bottom:20px;"><b> Projet créé par <strong><%=project.architect.first_name %>.<%=project.architect.last_name.first%> </strong></b></p>
+
+                                  <br>
                                 </div>
                             </div>
 
