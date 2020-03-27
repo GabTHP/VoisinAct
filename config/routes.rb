@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :attendances, only: [:create, :destroy]
   resources :likes
   resources :like_projects
+  resources :charges
 
   root 'projects#index'
   resources :projects
