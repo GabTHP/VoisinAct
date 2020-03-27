@@ -40,20 +40,14 @@
             <div class="col-lg-12 col-md-121">
                 <div class="login_part_form">
                     <div class="login_part_form_iner">
-                        <h3>Mettre à jour mon Profil</h3>
+                        <h3 style = "margin-bottom: 30px"> <b>Mettre à jour mon Profil</b></h3>
 
 
                         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => 'row contact_form', method: :put }) do |f| %>
 
                         <%= render "devise/shared/error_messages", resource: resource %>
 
-                            <div class="col-md-12 form-group p_star">
-                              
-                              <%= f.label :avatar, 'Description', :class => 'sr-only'  %>
-                              <%= f.file_field :avatar, :class => "form-control "%>
-                              <i>(Mettre à jour son Avatar)</i>
-                            </div>
-
+							<h4> Mes Informations personnelles (nom, prénom, ville, description, avatar, email) : </h4>
 
                             <div class="col-md-12 form-group p_star">
                                <%= f.label :first_name, 'First Name', :class => 'sr-only' %>
@@ -75,40 +69,47 @@
 
                             <div class="col-md-12 form-group p_star">
                                <%= f.label :description, 'Description', :class => 'sr-only' %>
-                                <%= f.text_area :description, autofocus: true, autocomplete: "description", :class => "form-control ", placeholder: 'Ta description à changer si tu le souhaite' %>
+                                <%= f.text_area :description, autofocus: true, autocomplete: "description", :class => "form-control ", :style => "height:50px", placeholder: 'Ta description à changer si tu le souhaite' %>
                             </div>
-
-
 
                             <div class="col-md-12 form-group p_star">
                                <%= f.label :email, 'Email', :class => 'sr-only' %>
                                 <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "form-control ", placeholder: 'Email Address' %>
                             </div>
 
+                            <div class="col-md-12 form-group p_star">
+                              <%= f.label :avatar, 'Description', :class => 'sr-only'  %>
+                              <%= f.file_field :avatar, :class => "form-control "%>
+                              <i>(Mettre à jour son Avatar)</i>
+                            </div>
+
+                            <h4><br> Changer mon mot de passe (laissez vide s'il n'ya pas de changement à effectuer) : </h4>
+
+
                             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
                             <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
                             <% end %>
 
+
+
                             <div class =" col-md-12 form-group ">
                               <%= f.label :password, :class => 'sr-only' %> 
-                              <%= f.password_field :password, autocomplete: "new-password", :class => "form-control ", placeholder: "New Password" %>
-                              <i>(Leave blank if you dont change your password)</i>
+                              <%= f.password_field :password, autocomplete: "new-password", :class => "form-control ", placeholder: "Nouveau Mot de Passe" %>
+                              
                             </div>
 
                             <div class =" col-md-12 form-group ">
                               <%= f.label :password_confirmation, :class => 'sr-only' %>
-                              <%= f.password_field :password_confirmation, autocomplete: "new-password", :class => "form-control ", placeholder: 'Confirm New Password' %>
+                              <%= f.password_field :password_confirmation, autocomplete: "new-password", :class => "form-control ", placeholder: 'Confirmer le nouveau Mot de Passe' %>
                             </div>
 
 
-
+                            <h4><br> Pour confirmer les modifications, veuillez saisir votre mot de passe actuel : </h4>
                          
 
                             <div class =" col-md-12 form-group ">
-
-                              <%= f.label :current_password, :class => 'sr-only' %> <br />
+                              <%= f.label :current_password, :class => 'sr-only' %> 
                               <%= f.password_field :current_password, autocomplete: "current-password", :class => "form-control ", placeholder: 'Current Password' %>
-                              <i>(we need your current password to confirm your changes)</i>
                             </div>
 
 
@@ -123,27 +124,16 @@
 
                           <p><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-                          <%= link_to "Back", :back %>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <p>Select<br>
-<span class="wpcf7-form-control-wrap Selectbox"><select class="Wide" name="Selectbox" class="wpcf7-form-control wpcf7-select" aria-invalid="false"><option value="First one">First one</option><option value="Second One">Second One</option><option value="Third one">Third one</option></select></span></p>
-<p>Hello</p>
-</section>
+   
 
 
 
-<script src="path/to/jquery.js"></script> 
-<script src="path/to/jquery.nice-select.js"></script>
-<!-- Script -->
-<script type='text/javascript'>
- 
-
-</script>
 <!--================login_part end =================-->
 
 

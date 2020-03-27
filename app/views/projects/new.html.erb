@@ -30,29 +30,39 @@
 </section>
 <!-- banner part start-->
 
-<section class="login_part padding_top">
+<section class="login_part padding_top" >
     <div class="container">
       <div class="col-lg-12 col-md-12">
-        <div class="login_part_form col-lg-12 col-md-12">
-          <div class="login_part_form_iner">
-            <h3>Lance ton projet sur VoisinAct dès Maintenant !
-                <p>Veuillez s'il vous plaît décrire votre projet dans le formulaire ci-dessous</p>
+        <div class="login_part_form col-lg-12 col-md-12" >
+          <div class="login_part_form_iner " >
+            <h3 style = "margin-top: 0px"><b>Lance ton projet sur VoisinAct dès Maintenant ! </b>
+                <p><b>Veuillez s'il vous plaît décrire votre projet dans le formulaire ci-dessous</b></p>
             </h3>
 
+              <h4> Quel est le projet que tu souhaites mettre en place ?   </h4>
               <%=form_tag url_for(action: 'create'), method: 'post', multipart: true do %> 
               <%= text_field_tag 'title' ,"", class:"form-control", placeholder: "Titre" %>
-              <br/>
-              <%= text_field_tag 'location' ,"", class:"form-control", placeholder: "Lieu" %><br/>
-              <br/>
-              <%= text_area_tag 'description' ,"", class:"form-control", placeholder: "Description" %><br/>
-              <%= number_field_tag 'number_of_participants' ,"", class:"form-control", placeholder: "Nombre de personnes supplémentaires requise pour la bonne conduite du projet" %><br/>
-              <%= number_field_tag 'amount_needed' ,"", class:"form-control", placeholder: "Budget souhaité pour votre projet" %><br/>
+              <br>
+              <%= text_field_tag 'location' ,"", class:"form-control", placeholder: "Emplacement du projet (quartier, rue... permettant de situer l'emplacement du projet dans votre ville)" %>
+              <br>
+              <%= text_area_tag 'description' ,"", class:"form-control", :style => "height:50px", placeholder: "Description" %>
+              <br>
+              <br>
+              <h4> Quels sont les objectifs en termes de participation humaine et financière ?  </h4>
+              <%= number_field_tag 'number_of_participants' ,"", class:"form-control", placeholder: "Nombre de personnes supplémentaires requise pour la bonne conduite du projet" %>
+              <br>
+              <%= number_field_tag 'amount_needed' ,"", class:"form-control", placeholder: "Budget souhaité pour votre projet" %>
+              <br>
+              <br>
+              <h4> A quelle date le projet doit avoir récolté les participations nécessaire à sa bonne conduite ?  </h4>
               <%= date_field_tag 'deadline' ,"", class:"form-control", placeholder: "Deadline" %>
-              <i>Indiquer la deadline de participation à votre projet</i>                
-              <br><br><%= file_field_tag 'picture' %>
-              <br><i>Choisis une illustration pour ton projet et faire plaisir aux yeux des voisins  ! </i>
+            
+              <br><br>
+              <h4> Pour terminer, ajoute une illustration à ton projet !  </h4>
+              <%= file_field_tag 'picture' %>
 
-              <br><br><%= submit_tag "Créer", class: 'btn_2' %>
+
+              <br><br><br><%= submit_tag "Créer", class: 'btn_2' %>
             <% end %>
 
           </div>
