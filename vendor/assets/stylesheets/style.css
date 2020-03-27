@@ -7631,30 +7631,34 @@ h6 {
   margin-bottom: 0px !important;
 }
 
-/**********************footer part css*******************/
+/*****************80***footer part css*******************/
 /* line 2, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_footer.scss */
 .footer_part {
-  padding: 130px 0px 25px;
+  margin-top:80px;
+  padding: 80px 0px 80px;
 }
 
 @media (max-width: 576px) {
   /* line 2, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_footer.scss */
   .footer_part {
-    padding: 70px 0px 25px;
+    padding: 70px 0px 70px;
+    margin-top:70px;
   }
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   /* line 2, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_footer.scss */
   .footer_part {
-    padding: 70px 0px 25px;
+    padding: 70px 0px 70px;
+    margin-top:70px;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   /* line 2, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_footer.scss */
   .footer_part {
-    padding: 70px 0px 25px;
+    padding: 70px 0px 70px;
+    margin-top:70px;
   }
 }
 
@@ -7913,6 +7917,7 @@ h6 {
     justify-content: flex-start !important;
   }
 }
+
 
 
 
