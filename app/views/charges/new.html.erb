@@ -1,0 +1,24 @@
+<div class="container text-center" style="margin-top: 10em; width: 30em">
+  <%= form_tag charges_path do %>
+    <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
+      <label class="amount">
+        <span>Montant du don: </span><br/>
+          <% amount = 0 %>
+          <%= number_field_tag 'donation_amount', "", class:"form-control mt-3", placeholder: "Montant du don souhaité" %><br/>
+          <%= hidden_field_tag 'project_id', @project.id %>
+      </label>
+    </article>
+
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="Votre don pour : '<%= @project.title %>' :"
+            data-amount= "<%= @donation_amount %>"
+            data-currency="eur"
+            data-locale="auto"></script>
+  <% end %>
+</div>
