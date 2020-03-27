@@ -24,18 +24,17 @@ before_action :authenticate_user!
       end
   end
 
-
   def destroy
     @like = Like.find_by(user: current_user)
     @project = Project.find_by(id: params[:id])
     @like_project = LikeProject.find_by(like: @like, project: @project)
-    if @like_project.destroy
-      redirect_to like_path(@like.id)
+    if @like_project.present?
+      @like_project.destroy
+      redirect_to projects_path
       flash[:alert] = "Vous n'aimez plus le projet"
     else
       flash[:alert] = "Le projet ne fait plus partie de vos projets favoris"
     end
   end
-
 
 end
