@@ -19,6 +19,7 @@ body {
   padding: 0;
   margin: 0;
   font-size: 14px;
+  height:100%;
 }
 
 /* line 11, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_common.scss */
@@ -7636,6 +7637,7 @@ h6 {
 .footer_part {
   margin-top:80px;
   padding: 80px 0px 80px;
+
 }
 
 @media (max-width: 576px) {
@@ -7643,6 +7645,7 @@ h6 {
   .footer_part {
     padding: 70px 0px 70px;
     margin-top:70px;
+
   }
 }
 
@@ -7651,6 +7654,7 @@ h6 {
   .footer_part {
     padding: 70px 0px 70px;
     margin-top:70px;
+
   }
 }
 
@@ -7659,6 +7663,7 @@ h6 {
   .footer_part {
     padding: 70px 0px 70px;
     margin-top:70px;
+
   }
 }
 
@@ -7917,6 +7922,56 @@ h6 {
     justify-content: flex-start !important;
   }
 }
+
+.stretch-card .card {
+     width: 100%;
+     min-width: 100%
+ }
+
+ body {
+     background-color: #f9f9fa
+ }
+
+ .flex {
+     -webkit-box-flex: 1;
+     -ms-flex: 1 1 auto;
+     flex: 1 1 auto
+ }
+
+ @media (max-width:991.98px) {
+     .padding {
+         padding: 1.5rem
+     }
+ }
+
+ @media (max-width:767.98px) {
+     .padding {
+         padding: 1rem
+     }
+ }
+
+ .padding {
+     padding: 3rem
+ }
+
+ .owl-carousel .item {
+     margin: 3px
+ }
+
+ .owl-carousel .item img {
+     display: block;
+     width: 100%;
+     height: auto
+ }
+
+ .owl-carousel .item {
+     margin: 3px
+ }
+
+ .owl-carousel {
+     margin-bottom: 15px
+ }
+
 
 
 
