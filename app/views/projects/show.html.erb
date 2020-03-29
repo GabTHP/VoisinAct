@@ -39,7 +39,7 @@
                 <% if @project.picture.attached? %>
                         <%= image_tag @project.picture, alt: 'picture', height: '100%', width: '100%'%> 
                       <%else%>
-                      <p> no picture </p>
+                      <%=image_tag("illustration")%>
                       <%end%>
               </div>
               
@@ -49,8 +49,7 @@
         <div class="col-lg-5 col-xl-4">
           <div>
             <h3><%= @project.title %></h3>
-            <hr>
-            <p>Type d'action : <b> Ecologique </b></p> 
+
             <hr>                                                      
             <h4> Ressources Requises</h4> <br> 
             <p>Besoins Humains : <b> <%= @project.number_of_participants %> personnes </b> <br> Besoins financier : <b> <%= @project.amount_needed %> $ </b><br> Financement récolté : <b> <%= @project.amount_state %> $ </b></p>
@@ -58,7 +57,7 @@
             <p>Fin des participations le <b><%= @project.deadline %></b></p>
             <hr>
             <p> <%= @project.description %> </p>
-            <p> https://www.leetchi.com/fr/c/lW3bmkQl </p>
+            <hr>
               </li>
             </ul>
             <% if current_user != @project.architect %>
@@ -70,11 +69,13 @@
                 <% else %>
                   <%= button_to "Participer au projet", attendances_path, data: { confirm: "Voulez-vous rejoindre le projet ? Un email avec les coordonnées de l'organisateur vous sera alors envoyé." , disable_with: 'Déjà rejoint' }, params: { project_id: @project.id }, class: "btn_3" %>
                 <% end %>
-                <div class="like_us"> <i class="fas fa-heart"></i> 
+                <div>
                 <%= link_to "Like", like_projects_path(project_id:@project.id), method: :post, :class=> 'btn_1' %>
-                </div>
-                  <%= link_to "Faire un don", new_charge_path( :project_id => @project.id), class: 'btn_2' %>
+                </div> 
               </div>
+              <br>
+              <%= link_to "Faire un don", new_charge_path( :project_id => @project.id), class: 'btn_3' %>
+
             <% end %>
           </div>
         </div>
